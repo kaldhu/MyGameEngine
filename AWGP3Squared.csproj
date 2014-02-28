@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCC63A1B-4EB5-470A-9E1A-2ECFE402B29F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AWGP3Squared</RootNamespace>
+    <AssemblyName>AWGP3Squared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI\AIAgent.cs" />
+    <Compile Include="AI\FSMachine.cs" />
+    <Compile Include="Components\AvailableStateComponent.cs" />
+    <Compile Include="Components\Collider.cs" />
+    <Compile Include="Components\ComponentType.cs" />
+    <Compile Include="Components\FSMComponent.cs" />
+    <Compile Include="Components\ScriptComponent.cs" />
+    <Compile Include="Core\ScriptController.cs" />
+    <Compile Include="Core\GameCommand.cs" />
+    <Compile Include="Games\GameOne.cs" />
+    <Compile Include="Core\GameSystem.cs" />
+    <Compile Include="Games\GraphicsExampleGame.cs" />
+    <Compile Include="Graphics\GraphicsSettings2D.cs" />
+    <Compile Include="Graphics\Managers\SpriteManager.cs" />
+    <Compile Include="Input\SFMLInput.cs" />
+    <Compile Include="Interfaces\IArtfc.cs" />
+    <Compile Include="Interfaces\IGraphicsSettings.cs" />
+    <Compile Include="Helper\Methods.cs" />
+    <Compile Include="Interfaces\ICollisionDetection.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="Interfaces\IGameCommand.cs" />
+    <Compile Include="Interfaces\IPositionComponent3D.cs" />
+    <Compile Include="Interfaces\ICollider.cs" />
+    <Compile Include="Interfaces\IRigidBody.cs" />
+    <Compile Include="Components\ModelComponent.cs" />
+    <Compile Include="Components\PositionComponent3D.cs" />
+    <Compile Include="Components\RigidBody.cs" />
+    <Compile Include="Interfaces\IComponent.cs" />
+    <Compile Include="Components\SpriteComponent.cs" />
+    <Compile Include="Core\GameObject.cs" />
+    <Compile Include="Core\GameObjectManager.cs" />
+    <Compile Include="Interfaces\IComponentFactory.cs" />
+    <Compile Include="Interfaces\IComponentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IGameObject.cs" />
+    <Compile Include="Interfaces\IGameObjectManager.cs" />
+    <Compile Include="Interfaces\IModule.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
+    <Compile Include="Core\Observer.cs" />
+    <Compile Include="Interfaces\IGraphics.cs" />
+    <Compile Include="Interfaces\IModelManager.cs" />
+    <Compile Include="Interfaces\ISpriteComponent.cs" />
+    <Compile Include="Interfaces\ITextureManager.cs" />
+    <Compile Include="Graphics\SFMLGraphics2D.cs" />
+    <Compile Include="Helper\Constant.cs" />
+    <Compile Include="Interfaces\IPhysics.cs" />
+    <Compile Include="Interfaces\IInput.cs" />
+    <Compile Include="Maths\Vector2.cs" />
+    <Compile Include="Interfaces\IScript.cs" />
+    <Compile Include="Interfaces\IScriptComponent.cs" />
+    <Compile Include="Interfaces\IScriptController.cs" />
+    <Compile Include="Physics\Physics.cs" />
+    <Compile Include="Interfaces\IMessage.cs" />
+    <Compile Include="Interfaces\IMessageType.cs" />
+    <Compile Include="Interfaces\IPostOffice.cs" />
+    <Compile Include="Graphics\Shader.cs" />
+    <Compile Include="Maths\Vector3.cs" />
+    <Compile Include="Post Office\Message.cs" />
+    <Compile Include="Post Office\MessageType.cs" />
+    <Compile Include="Post Office\PostOffice.cs" />
+    <Compile Include="Scripts\TestScript.cs" />
+    <Compile Include="Testing\UnitTesting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-audio-2">
+      <HintPath>..\..\SFML.Net-2.1\lib\sfmlnet-audio-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-graphics-2">
+      <HintPath>..\..\SFML.Net-2.1\lib\sfmlnet-graphics-2.dll</HintPath>
+    </Reference>
+    <Reference Include="sfmlnet-window-2">
+      <HintPath>..\..\SFML.Net-2.1\lib\sfmlnet-window-2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
